@@ -1,7 +1,7 @@
 //funçao para fazer o login com base no e-mail e senha
 async function loginUser(email, password){
     try {
-        const userCredential = await auth.signInwithEmailAndPassword(email, password)
+        const userCredential = await auth.signInWithEmailAndPassword(email, password)
         const user = userCredential.user;
     return "sucesso";
     } catch(error){
@@ -10,19 +10,19 @@ async function loginUser(email, password){
 }
 
 document.getElementById("btnLogin").addEventListener("click", async(event)=>{
-    event.defaultPrevented();
+    event.preventDefault();
 
     //armazena o email e a senha com base no seu id
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     //cria a variavel para armazenar a resposta da função loginUser()
-    const result = loginUser(email, password);
+    const result =  await loginUser(email, password);
 
 
     if(result == "sucesso"){
         window.location.href = "home.html";
     }else{
-        alert("Error ao fazer o login")
+        alert("Error ao fazer o login");
     }
 })
