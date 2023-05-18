@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <script src="https://kit.fontawesome.com/6cde816448.js" crossorigin="anonymous"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="./js/firebase-config.js" defer></script>
+    <script src="./js/login.js" defer></script>
 </head>
 <body>
 <section class="nav_login">    
@@ -33,11 +38,11 @@
             <h2 class="tamanho titulo"> Olá! 👋 Tudo bem?</h2>
             <p class="texto_form">Entre com seu e-mail e senha no nosso sistema.</p>
             <label for="email">E-mail:</label>
-            <input type="email" placeholder="E-mail" required>
+            <input id= "email" type="email" placeholder="E-mail" required>
             <label for="password">Senha:</label>
             <input type="password" placeholder="Senha" required>
-            <a class="esqueceu_senha"href="">Esqueceu sua senha?</a>
-            <button>ENTRAR</button>
+            <a href="" class="esqueceu_senha">Esqueceu sua senha?</a>
+            <button id="btnLogin">ENTRAR</button>
             </form>
     </section>    
 </body>

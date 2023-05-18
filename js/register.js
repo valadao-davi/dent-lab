@@ -16,6 +16,7 @@ async function registerUser(email, password, event) {   //função para registro
                 ui: user.uid
             }
         );
+        alert ("Cadastro realizado com sucesso !");
     } catch (error){ // se não funcionar informe o erro
         console.log(error); //print "error"
     }                                   
